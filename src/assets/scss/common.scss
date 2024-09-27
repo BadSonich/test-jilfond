@@ -68,6 +68,40 @@ span {
     padding: 0 50px;
 }
 
+.preloader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #{colors.getColor('gray')};
+    z-index: 1;
+
+    &:after {
+        content: '';
+        width: 100px;
+        aspect-ratio: 900 / 512;
+        background-image: url("/public/preloader.svg");
+        background-position: 0 0;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        animation: 1s linear 0s normal none infinite running rot;
+        -webkit-animation: 1s linear 0s normal none infinite running rot;
+    }
+}
+
+@keyframes rot {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 header {
     padding: 56px 0 26px;
     display: flex;
