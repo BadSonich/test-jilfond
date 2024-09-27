@@ -1,0 +1,12 @@
+$siteColors: (
+    'black': #333,
+    'darkGray':#76787D,
+    'gray': #E0E0E0,
+    'midGray': #E9ECEF,
+    'white': #fff,
+    'red': #E31F24,
+);
+
+@function getColor($color: 'main') {
+    @return map-get($siteColors, $color);
+}

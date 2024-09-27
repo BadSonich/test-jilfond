@@ -1,0 +1,61 @@
+@use "./mixins/colors.scss" as colors;
+
+@font-face {
+    font-family: Montserrat;
+    font-weight: 700;
+    src: url("../fonts/Montserrat-Bold.ttf");
+}
+
+@font-face {
+    font-family: Montserrat;
+    font-weight: 600;
+    src: url("../fonts/Montserrat-SemiBoldItalic.ttf");
+}
+
+@font-face {
+    font-family: Montserrat;
+    font-weight: 400;
+    src: url("../fonts/Montserrat-Regular.ttf");
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: Montserrat, serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.4;
+    color: #{colors.getColor('black')};
+}
+
+body {
+    width: 100vw;
+    margin: 0 auto;
+    padding: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: #{colors.getColor('white')};
+}
+
+h1 {
+    font-weight: 700;
+    color: #{colors.getColor('red')};
+}
+
+h2, h3 {
+    font-weight: 600;
+}
+
+p {
+    line-height: 1.2;
+    color: #{colors.getColor('darkGray')};
+}
+
+span {
+    font-weight: 600;
+}
