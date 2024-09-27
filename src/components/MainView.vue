@@ -17,6 +17,6 @@
       SelectedUser,
       SearchResult,
       SiteSearch
-    }
+    },
   }
 </script>

@@ -64,7 +64,8 @@ span {
 
 .container {
     margin: 0 auto;
-    max-width: 1266px;
+    max-width: 1366px;
+    padding: 0 50px;
 }
 
 header {
@@ -119,6 +120,7 @@ main {
     }
 
     &__img {
+        pointer-events: none;
         width: 70px;
         position: relative;
 
@@ -130,14 +132,17 @@ main {
     }
 
     &__info {
+        pointer-events: none;
         padding: 15px 15px 18px;
         border-radius: 0 10px 10px 0;
         border-left: 1px solid #{colors.getColor('gray')};
         display: grid;
         gap: 5px;
+
     }
 
-    &:hover &__info {
+    &__list > div:hover &__info,
+    &__list > div.selected &__info {
         background-color: #{colors.getColor('gray')};
     }
 

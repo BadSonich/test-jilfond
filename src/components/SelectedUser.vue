@@ -1,14 +1,13 @@
 <template>
   <section class="selected-user">
-    <p v-if="false">Выберите сотрудника, чтобы посмотреть его профиль</p>
-    <div v-else>
+    <div v-if="Object.keys(user).length > 0">
       <div class="selected-user__img">
         <img src="/images/img.png" alt="user">
       </div>
       <div class="selected-user__info">
-        <h2>Ervin Howell</h2>
-        <div><span>email:</span> Shanna@melissa.tv</div>
-        <div><span>phone:</span> 010-692-6593 x09125</div>
+        <h2>{{ user.name }}</h2>
+        <div><span>email:</span> {{ user.email }}</div>
+        <div><span>phone:</span> {{ user.phone }}</div>
         <div>
           <h3>О себе:</h3>
           <p>
@@ -17,11 +16,21 @@
         </div>
       </div>
     </div>
+    <p v-else>
+      Выберите сотрудника, чтобы посмотреть его профиль
+    </p>
   </section>
 </template>
 
 <script>
+  import {mapGetters} from "vuex";
+
   export default {
-    name: "selected-user"
+    name: "selected-user",
+    computed: {
+      ...mapGetters({
+        user: 'selectedUser',
+      }),
+    },
   }
 </script>
